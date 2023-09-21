@@ -7,6 +7,24 @@ public class Homework2 {
 
     public static int randomNumbers[]={1,2,3,12,23,32,51,56,59,62,64,69,71,88,89,94};
 
+    public static int getMinimum(int[] randomNumbers){
+        int minimum= randomNumbers[0];
+        for(int i=0; i<randomNumbers.length;i++){
+            if(minimum>randomNumbers[i]){
+                minimum=randomNumbers[i];
+            }
+        }
+        return minimum;
+    }
+    public static int getMaximum(int[] randomNumbers){
+        int maximum= randomNumbers[0];
+        for(int i=0; i<randomNumbers.length;i++){
+            if(maximum<randomNumbers[i]){
+                maximum=randomNumbers[i];
+            }
+        }
+        return maximum;
+    }
     public static void main(String[] args) {
 
         int chosenOption;
@@ -23,6 +41,9 @@ public class Homework2 {
 
             if (chosenOption == 0){
                 // FIND THE MINIMUM AND THE MAXIMUM OF THE ARRAY
+                System.out.println("Minimum value of array : " +getMinimum(randomNumbers));
+                System.out.println("Maximum value of array : " +getMaximum(randomNumbers));
+
             }
 
             if (chosenOption == 1){
@@ -33,7 +54,7 @@ public class Homework2 {
                 // FIND THE SUM OF ELEMENTS
             }
 
-            
+
         } while (chosenOption != 3);
     }
 }
