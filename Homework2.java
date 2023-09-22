@@ -44,21 +44,24 @@ public class Homework2 {
         }
         return sum;
     }
-    int[] avr;
-    public static average (int[] randomNumbers){
-        int length = randomNumbers.length;
+   static  int[] avr = new int[randomNumbers.length];
+    public static int[] average (int[] arr){
+       
+        int length = arr.length;
         avr = new int[length];
         double sum = 0;
         int average;
-        for (int num : randomNumbers) {
+        for (int num : arr) {
             sum += num;
         }
         average = (int)sum / length;
-        for (int i = 0; i < randomNumbers.length; i++){
-            avr[i] = average - randomNumbers[i];
+        for (int i = 0; i < arr.length; i++){
+            avr[i] = average - arr[i];
         }
+        return avr;
     }
-    public void display() {
+    public static void display() {
+        average(randomNumbers);
         System.out.print("{");
         for (int i = 0; i < avr.length; i++) {
             System.out.print(avr[i]);
@@ -68,6 +71,7 @@ public class Homework2 {
             }
         }
         System.out.println("}");
+        System.out.println();
     }
     public static void main(String[] args) {
 
@@ -91,7 +95,7 @@ public class Homework2 {
             }
 
             if (chosenOption == 1){
-                System.out.print("differnce from average is:")
+              System.out.print("difference from average is: ");
                     display();
             }
 
