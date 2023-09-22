@@ -25,6 +25,25 @@ public class Homework2 {
         }
         return maximum;
     }
+
+    public static int sumEvenIndexes(int[] randomNumbers){
+        int sum = 0;
+        for(int i = 0; i < randomNumbers.length; i++){
+            if(i % 2 == 0){
+                sum += randomNumbers[i];
+            }
+        }
+        return sum;
+    }
+    public static int sumOddIndexes(int[] randomNumbers){
+        int sum = 0;
+        for(int i = 0; i < randomNumbers.length; i++){
+            if(i % 2 == 1){
+                sum += randomNumbers[i];
+            }
+        }
+        return sum;
+    }
     public static void main(String[] args) {
 
         int chosenOption;
@@ -51,7 +70,8 @@ public class Homework2 {
             }
 
             if (chosenOption == 2){
-                // FIND THE SUM OF ELEMENTS
+                System.out.println("Sum of elements at even-numbered indexes: " + sumEvenIndexes(randomNumbers));
+                System.out.println("Sum of elements at odd-numbered indexes: " + sumOddIndexes(randomNumbers) );
             }
 
 
