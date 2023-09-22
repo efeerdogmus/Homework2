@@ -44,6 +44,31 @@ public class Homework2 {
         }
         return sum;
     }
+    int[] avr;
+    public static average (int[] randomNumbers){
+        int length = randomNumbers.length;
+        avr = new int[length];
+        double sum = 0;
+        int average;
+        for (int num : randomNumbers) {
+            sum += num;
+        }
+        average = (int)sum / length;
+        for (int i = 0; i < randomNumbers.length; i++){
+            avr[i] = average - randomNumbers[i];
+        }
+    }
+    public void display() {
+        System.out.print("{");
+        for (int i = 0; i < avr.length; i++) {
+            System.out.print(avr[i]);
+
+            if (i < avr.length - 1) {
+                System.out.print(", ");
+            }
+        }
+        System.out.println("}");
+    }
     public static void main(String[] args) {
 
         int chosenOption;
@@ -66,7 +91,8 @@ public class Homework2 {
             }
 
             if (chosenOption == 1){
-                // FIND THE AVERAGE OF ARRAY
+                System.out.print("differnce from average is:")
+                    display();
             }
 
             if (chosenOption == 2){
@@ -77,29 +103,5 @@ public class Homework2 {
 
         } while (chosenOption != 3);
     }
-        int[] avr;
-    public average (int[] arr){
-        int length = arr.length;
-        avr = new int[length];
-        double sum = 0;
-        int average;
-        for (int num : arr) {
-            sum += num;
-        }
-        average = (int)sum / length;
-        for (int i = 0; i < arr.length; i++){
-            avr[i] = average - arr[i];
-        }
-    }
-    public void display() {
-        System.out.print("{");
-        for (int i = 0; i < avr.length; i++) {
-            System.out.print(avr[i]);
-
-            if (i < avr.length - 1) {
-                System.out.print(", ");
-            }
-        }
-        System.out.println("}");
-    }
+  
 }
